@@ -7,8 +7,8 @@ const router = express.Router();
 router.post("/test", async(req, res) => {
     try {
         const thread = new Thread({
-            threadId: "xyz",
-            title: "Testing New Thread"
+            threadId: "abc",
+            title: "Testing New Thread 2"
         });
 
         const response = await thread.save();
@@ -17,6 +17,18 @@ router.post("/test", async(req, res) => {
     } catch(err) {
         console.log(err);
         res.status(500).json({error: "Failed to save in DB"});
+    }
+})
+
+// Get all threads
+router.get("/thread", async(req, res) => {
+    try {
+        const threads = await Thread.find({}).sort({updatedAt: -1});
+        // descending order of updatedAt...most recent data on the top
+        res.json(threads);
+    } catch(err) {
+        console.log(err);
+        res.send(500).json({error: "Failed to get all threads"});
     }
 })
 
