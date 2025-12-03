@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-const getOpenAIAPIResponse = async(messages) => {
+const getOpenAIAPIResponse = async(message) => {
     const options = {
     method: "POST",
     headers: {
@@ -11,7 +11,7 @@ const getOpenAIAPIResponse = async(messages) => {
       model: "gpt-4o-mini",
       messages: [{
           role: "user",
-          content: "Hello!",
+          content: message,
         }]
     })
   };
