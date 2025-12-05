@@ -13,7 +13,7 @@
     height: 42px;
     width: 42px;
     padding: 2px;
-    margin: 10px;
+    margin: 20px;
     border-radius: 20px;
     cursor: pointer;
     display: flex;
@@ -43,19 +43,56 @@
 .newchat-btn {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 30px 25px;
     border-radius: 14px;
-    border: solid;
+    border: 1px solid;
     background-color: transparent;
-    width: 75%;
+    width: 80%;
+    cursor: pointer;
+}
+.newchat-btn:hover {
+    background-color: rgb(180, 180, 180, 0.10);
 }
 
 button span {
-    font-size: 25px;
-    margin: 0 10px;
+    font-size: 20px;
+    margin: 5px;
 }
 
 button p {
+    color: #b4b4b4;
     font-size: 20px;
+    font-family: "Comic Sans MS", "cursive", "sans-serif";
+    font-weight: 100;
     margin: 0 20px;
+}
+
+.history {
+    margin: 10px;
+    padding: 10px;
+    height: 100%;
+}
+
+.history li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 2px 5px;
+    margin-bottom: 0.3rem;
+    font-size: 16px;
+    border: solid 10px transparent;
+    border-radius: 14px;
+}
+
+.history li:hover {
+    background-color: rgb(180, 180, 180, 0.08);
+}
+
+.sign {
+    margin: 10px 20px;
+    padding: 10px;
+    color: #b4b4b4;
+    font-size: 14px;
+    font-family: "Comic Sans MS", "cursive", "sans-serif";
+    text-align: center;
+    border-top: solid 0.05rem rgb(180, 180, 180, 0.5);
 }
