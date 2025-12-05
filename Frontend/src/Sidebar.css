@@ -1,0 +1,61 @@
+.sidebar {
+    background-color: #171717;
+    color: #b4b4b4;
+    height: 100vh;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logobtn {
+    background-color: #b4b4b4;
+    height: 42px;
+    width: 42px;
+    padding: 2px;
+    margin: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+}
+.logobtn:hover {
+    background-color: #d4d4d4;
+}
+
+.appname {
+    color: #b4b4b4;
+    font-family: "Comic Sans MS", "cursive", "sans-serif";
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 15px;
+}
+
+.appname:hover {
+    color: #d4d4d4;
+}
+
+.logo {
+    height: 35px;
+    width: 35px;
+}
+
+.newchat-btn {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border-radius: 14px;
+    border: solid;
+    background-color: transparent;
+    width: 75%;
+}
+
+button span {
+    font-size: 25px;
+    margin: 0 10px;
+}
+
+button p {
+    font-size: 20px;
+    margin: 0 20px;
+}
