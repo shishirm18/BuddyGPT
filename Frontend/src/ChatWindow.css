@@ -21,6 +21,10 @@
     margin: 0.7rem 1.5rem;
 }
 
+.fa-angle-down {
+    cursor: pointer;
+}
+
 .userIconDiv {
     margin: 0.7rem 1rem;
 }

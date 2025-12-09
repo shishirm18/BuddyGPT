@@ -9,11 +9,15 @@ function App() {
   const [prompt, setPrompt] = useState(""); // prompt is basically the use input message.
   const [reply, setReply] = useState(null); // This is the reply from the openAI for the prompt.
   const [curThreadId, setCurThreadId] = useState(uuidv1());
+  const [prevChats, setPrevChats] = useState([]); // stores all the chats for that thread Id.
+  const [newChat, setNewChat] = useState(true); // activates if we press the new chat button.
 
   const providerValues = {
     prompt, setPrompt,
     reply, setReply,
-    curThreadId, setCurThreadId
+    curThreadId, setCurThreadId,
+    prevChats, setPrevChats,
+    newChat, setNewChat
   }; // we'll be passing down the values from this object. Wrap the components with the Provider where we'll pass all the values
 
   return (
