@@ -19,3 +19,6 @@ timestamp
 "express": "^5.1.0",
 "nodemon": "^3.1.11",
 "openai": "^6.9.1"
+
+Feature:
+- Latest reply has a typing effect with word by word printing.
