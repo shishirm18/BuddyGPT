@@ -11,13 +11,15 @@ function App() {
   const [curThreadId, setCurThreadId] = useState(uuidv1());
   const [prevChats, setPrevChats] = useState([]); // stores all the chats for that thread Id.
   const [newChat, setNewChat] = useState(true); // activates if we press the new chat button.
+  const [allThreads, setAllThreads] = useState([]); // stores all the existing threads.
 
   const providerValues = {
     prompt, setPrompt,
     reply, setReply,
     curThreadId, setCurThreadId,
     prevChats, setPrevChats,
-    newChat, setNewChat
+    newChat, setNewChat,
+    allThreads, setAllThreads
   }; // we'll be passing down the values from this object. Wrap the components with the Provider where we'll pass all the values
 
   return (

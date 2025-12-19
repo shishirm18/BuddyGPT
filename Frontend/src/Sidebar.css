@@ -68,19 +68,19 @@ button p {
 }
 
 .history {
-    margin: 10px;
-    padding: 10px;
+    margin: 0px;
+    padding: 0px 5px;
     height: 100%;
 }
 
 .history li {
     list-style-type: none;
     cursor: pointer;
-    padding: 2px 5px;
-    margin-bottom: 0.3rem;
-    font-size: 16px;
-    border: solid 10px transparent;
-    border-radius: 14px;
+    padding: 4px 0px 4px 15px;
+    margin-bottom: 1px;
+    font-size: 12px;
+    border: solid 5px transparent;
+    border-radius: 12px;
 }
 
 .history li:hover {
