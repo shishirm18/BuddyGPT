@@ -50,9 +50,12 @@ function Sidebar() {
 
     const deleteThread = async (threadId) => {
         try {
-            const response = await fetch(`http://localhost:8080/api/thread/${threadId}`);
+            const response = await fetch(`http://localhost:8080/api/thread/${threadId}`, {method: "DELETE"});
             const res = await response.json();
             console.log(res);
+
+            //Updated thread after the deletion, re-render
+            setAllThreads(prev => prev.filter(thread => thread.threadId != threadId));
         } catch (err) {
             console.log(err);
         }
@@ -83,8 +86,7 @@ function Sidebar() {
                                         deleteThread(thread.threadId);
                                     }}
                                 >
-
-                                    </i>
+                                </i>
                             </li>
                         ))
                     }
