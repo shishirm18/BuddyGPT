@@ -49,14 +49,15 @@ function Chats() {
                 prevChats.length > 0 && (
                     <>
                     {
-                        latestRepy === null ?
+                        latestRepy === null ? (
                         <div className="gptDiv" key={"non-typing"}>
                         <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{prevChats[prevChats.length-1].content}</ReactMarkdown>
                         </div>
-                        :
+                        ) : (
                         <div className="gptDiv" key={"typing"}>
                         <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{latestRepy}</ReactMarkdown>
                         </div>
+                        )
                     }
                     </>
                 )

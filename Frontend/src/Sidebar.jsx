@@ -48,6 +48,16 @@ function Sidebar() {
 
     }
 
+    const deleteThread = async (threadId) => {
+        try {
+            const response = await fetch(`http://localhost:8080/api/thread/${threadId}`);
+            const res = await response.json();
+            console.log(res);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
         <section className="sidebar">
             <div>
@@ -67,6 +77,14 @@ function Sidebar() {
                             <li key={idx} 
                                 onClick={(e) => changeThread(thread.threadId)}>
                                 {thread.title}
+                                <i class="fa-regular fa-trash-can" 
+                                    onClick={(e) => {
+                                        e.stopPropagation(); //To Stop Event Bubbling(basically, this click should not effect the parent list item to trigger)
+                                        deleteThread(thread.threadId);
+                                    }}
+                                >
+
+                                    </i>
                             </li>
                         ))
                     }
