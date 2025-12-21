@@ -1,9 +1,10 @@
 import "./Sidebar.css"
 import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext";
+import {v1 as uuidv1} from "uuid"
 
 function Sidebar() {
-    const { allThreads, setAllThreads } = useContext(MyContext);
+    const { allThreads, setAllThreads, setNewChat, setPrompt, setReply, curThreadId, setCurThreadId, setPrevChats } = useContext(MyContext);
 
     const getAllThreads = async () => {
         try {
@@ -11,7 +12,7 @@ function Sidebar() {
             const res = await response.json();
             // We need threadId and Title 
             const filteredThread = res.map(thread => ({threadId: thread.threadId, title: thread.title}));
-            console.log(filteredThread);
+            // console.log(filteredThread);
             setAllThreads(filteredThread);
         } catch (err) {
             console.log(err);
@@ -20,7 +21,32 @@ function Sidebar() {
 
     useEffect(() => {
         getAllThreads()
-    }, [])
+    }, [curThreadId])
+
+    // Trigger this func on click of the New Chat button
+    const createNewChat = () => {
+        setNewChat(true);
+        setPrompt("");
+        setReply(null);
+        setCurThreadId(uuidv1());
+        setPrevChats([]);
+    }
+
+    // 
+    const changeThread = async (newThreadId) => {
+        setCurThreadId(newThreadId);
+
+        try {
+            const response = await fetch(`http://localhost:8080/api/thread/${newThreadId}`);
+            const res = await response.json();
+            setPrevChats(res);
+            setNewChat(false);
+            setReply(null);
+        } catch (err) {
+            console.log(err);
+        }
+
+    }
 
     return (
         <section className="sidebar">
@@ -30,7 +56,7 @@ function Sidebar() {
                     <p className="appname">BuddyGPT</p>
                 </button>
                 
-                <button className="newchat-btn">
+                <button className="newchat-btn" onClick={createNewChat}>
                     <span><i className="fa-solid fa-pen-to-square"></i></span>
                     <p>New Chat</p>
                 </button>
@@ -38,7 +64,10 @@ function Sidebar() {
                 <ul className="history">
                     {
                         allThreads?.map((thread, idx) => (
-                            <li key={idx}>{thread.title}</li>
+                            <li key={idx} 
+                                onClick={(e) => changeThread(thread.threadId)}>
+                                {thread.title}
+                            </li>
                         ))
                     }
                 </ul>
