@@ -7,6 +7,7 @@ import { RingLoader } from "react-spinners"
 function ChatWindow() {
     const {prompt, setPrompt, reply, setReply, curThreadId, setPrevChats, setNewChat} = useContext(MyContext);
     const [loading, setLoading] = useState(false);
+    const [ isOpen, setIsOpen ] = useState(true);
 
     const getReply = async() => {
         setLoading(true);
@@ -56,6 +57,15 @@ function ChatWindow() {
                     <span className="userIcon"><i className="fa-solid fa-user"></i></span>
                 </div>
             </div>
+            {
+                isOpen && 
+                <div className="dropDown">
+                    <div className="dropDownItem"><i class="fa-solid fa-address-card"></i> Profile</div>
+                    <div className="dropDownItem"><i class="fa-solid fa-cloud-arrow-up"></i> Upgrade Plan</div>
+                    <div className="dropDownItem"><i class="fa-solid fa-gear"></i> Settings</div>
+                    <div className="dropDownItem"><i class="fa-solid fa-right-from-bracket"></i> Logout</div>
+                </div>
+            }
             <Chats></Chats>
             <RingLoader color="#b4b4b4" size="50px" loading={loading}></RingLoader>
             <div className="chatInput">
