@@ -7,7 +7,7 @@ import { RingLoader } from "react-spinners"
 function ChatWindow() {
     const {prompt, setPrompt, reply, setReply, curThreadId, setPrevChats, setNewChat} = useContext(MyContext);
     const [loading, setLoading] = useState(false);
-    const [ isOpen, setIsOpen ] = useState(true);
+    const [ isOpen, setIsOpen ] = useState(false);
 
     const getReply = async() => {
         setLoading(true);
@@ -49,11 +49,15 @@ function ChatWindow() {
         setPrompt("");
     }, [reply]);
 
+    const handleUserIcon = () => {
+        setIsOpen(!isOpen);
+    }
+
     return (
         <div className="chatWindow">
             <div className="navbar">
                 <span>GPT Ver<i className="fa-solid fa-angle-down"></i></span>
-                <div className="userIconDiv">
+                <div className="userIconDiv" onClick={handleUserIcon}>
                     <span className="userIcon"><i className="fa-solid fa-user"></i></span>
                 </div>
             </div>
