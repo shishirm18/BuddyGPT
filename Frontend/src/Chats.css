@@ -4,6 +4,10 @@
     padding: 8rem;
 }
 
+.newChatInfo {
+    color: #b4b4b4;
+    font-family: "Comic Sans MS", "cursive", "sans-serif";
+}
 .userDiv {
     display: flex;
     justify-content: flex-end;

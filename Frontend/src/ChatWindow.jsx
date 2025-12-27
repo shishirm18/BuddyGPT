@@ -56,7 +56,9 @@ function ChatWindow() {
     return (
         <div className="chatWindow">
             <div className="navbar">
-                <span>GPT Ver<i className="fa-solid fa-angle-down"></i></span>
+                <span>GPT Ver: 4-o-mini
+                    {/* <i className="fa-solid fa-angle-down"></i> */}
+                    </span>
                 <div className="userIconDiv" onClick={handleUserIcon}>
                     <span className="userIcon"><i className="fa-solid fa-user"></i></span>
                 </div>
@@ -74,7 +76,7 @@ function ChatWindow() {
             <RingLoader color="#b4b4b4" size="50px" loading={loading}></RingLoader>
             <div className="chatInput">
                 <div className="userInput">
-                    <input type="text" placeholder="Ask anything" value={prompt} onChange={(e) => setPrompt(e.target.value)}/>
+                    <input type="text" placeholder="Ask anything..." value={prompt} onChange={(e) => setPrompt(e.target.value)}/>
                     <div id="submit" onClick={getReply}><i className="fa-solid fa-arrow-right"></i></div>
                 </div>
                 <p className="info">

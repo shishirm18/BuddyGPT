@@ -19,6 +19,8 @@
 
 .navbar span {
     margin: 0.7rem 1.5rem;
+    color: #b4b4b4;
+    font-family: "Comic Sans MS", "cursive", "sans-serif";
 }
 
 .fa-angle-down {
