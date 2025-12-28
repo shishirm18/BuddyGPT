@@ -127,8 +127,9 @@ button p {
 }
 
 .fa-trash-can:hover {
-    color: rgb(210, 55, 55);
-    transition: color 0.5s;
+    color: rosybrown;
+    transform: translateY(-0.75px);
+    transition: color 0.5s ease, transform 0.2s ease;
 }
 
 .history li:hover .fa-trash-can{

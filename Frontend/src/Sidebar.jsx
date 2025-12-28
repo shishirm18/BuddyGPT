@@ -48,6 +48,7 @@ function Sidebar() {
 
     }
 
+    // Delete one of the threads.
     const deleteThread = async (threadId) => {
         try {
             const response = await fetch(`http://localhost:8080/api/thread/${threadId}`, {method: "DELETE"});
@@ -56,6 +57,7 @@ function Sidebar() {
 
             //Updated thread after the deletion, re-render
             setAllThreads(prev => prev.filter(thread => thread.threadId != threadId));
+            setNewChat(true);
         } catch (err) {
             console.log(err);
         }
