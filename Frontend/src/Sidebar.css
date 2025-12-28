@@ -96,10 +96,10 @@ button p {
     list-style-type: none;
     cursor: pointer;
     padding: 4px 8px 4px 10px;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
     font-size: 12px;
     border: solid 5px transparent;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .history li:hover {

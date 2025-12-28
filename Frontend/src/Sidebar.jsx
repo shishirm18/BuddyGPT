@@ -57,7 +57,10 @@ function Sidebar() {
 
             //Updated thread after the deletion, re-render
             setAllThreads(prev => prev.filter(thread => thread.threadId != threadId));
-            setNewChat(true);
+            // If we delete the current thread
+            if (threadId === curThreadId){
+                createNewChat();
+            }
         } catch (err) {
             console.log(err);
         }
