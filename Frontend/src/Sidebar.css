@@ -35,6 +35,10 @@
     margin: 0 15px;
 }
 
+.highlightedThread {
+    background-color: rgb(180, 180, 180, 0.10);
+}
+
 .appname:hover {
     color: #d4d4d4;
     transition: color 0.3s ease, transform 0.3s ease;
