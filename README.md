@@ -5,9 +5,9 @@ OverView:
 ![alt text](image.png)
 
 ## TechStack
-Frontend - React + CSS
-Backend - Node.js + Express.js
-Database - MongoDB
+- Frontend - React + CSS
+- Backend - Node.js + Express.js
+- Database - MongoDB
 
 ## Model 
 1. ThreadSchema contains
