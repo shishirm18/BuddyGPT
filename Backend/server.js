@@ -5,17 +5,12 @@ import mongoose from "mongoose";
 import chatRoutes from "./routes/chat.js";
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cors());
 
 app.use("/api", chatRoutes);
-
-app.listen(PORT, () => {
-  console.log(`server running on ${PORT}`);
-  connectDB();
-});
 
 const connectDB = async() => {
   try {
@@ -26,28 +21,15 @@ const connectDB = async() => {
   }
 }
 
-// app.post("/test", async (req, res) => {
-//   const options = {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
-//     },
-//     body: JSON.stringify({
-//       model: "gpt-4o-mini",
-//       messages: [{
-//           role: "user",
-//           content: "Hello!",
-//         }]
-//     })
-//   };
+// Connect to DB immediately
+connectDB();
 
-//   try {
-//     const response = await fetch("https://api.openai.com/v1/chat/completions", options);
-//     const data = await response.json();
-//     console.log(data.choices[0].message.content);
-//     res.send(data.choices[0].message.content);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// });
+// Only listen on port if not in serverless environment
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`server running on ${PORT}`);
+  });
+}
+
+// Export for Vercel serverless
+export default app;
