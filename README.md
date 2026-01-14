@@ -28,7 +28,7 @@ timestamp
 "nodemon": "^3.1.11",
 "openai": "^6.9.1"
 
-Features:
+## Features:
 - Latest reply has a typing effect with word by word printing.
 - Hover on each history threads to observe the delete option popup.
     - Click on each history threads to view their respective chats.
