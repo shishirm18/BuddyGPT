@@ -4,7 +4,7 @@ import { MyContext } from "./MyContext.jsx";
 import { useContext, useState, useEffect } from "react";
 import { RingLoader } from "react-spinners";
 
-const API_URI = import.meta.env.API_URI || "http://localhost:8080/api";
+const API_URI = import.meta.env.VITE_API_URI || "http://localhost:8080/api";
 
 function ChatWindow() {
     const {prompt, setPrompt, reply, setReply, curThreadId, setPrevChats, setNewChat} = useContext(MyContext);

@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext";
 import {v1 as uuidv1} from "uuid";
 
-const API_URI = import.meta.env.API_URI || "http://localhost:8080/api";
+const API_URI = import.meta.env.VITE_API_URI;
 
 function Sidebar() {
     const { allThreads, setAllThreads, setNewChat, setPrompt, setReply, curThreadId, setCurThreadId, setPrevChats } = useContext(MyContext);
@@ -72,7 +72,7 @@ function Sidebar() {
         <section className="sidebar">
             <div>
                 <button className="logobtn">
-                    <img src="src/assets/buddylogo.png" alt="buddy logo" className="logo"/>
+                    <img src="/buddylogo.png" alt="buddy logo" className="logo"/>
                     <p className="appname">BuddyGPT</p>
                 </button>
                 
