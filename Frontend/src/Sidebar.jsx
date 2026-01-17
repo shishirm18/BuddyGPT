@@ -72,7 +72,7 @@ function Sidebar() {
         <section className="sidebar">
             <div>
                 <button className="logobtn">
-                    <img src="/buddylogo.png" alt="buddy logo" className="logo"/>
+                    <img src="/buddy-logo.svg" alt="buddy logo" className="logo"/>
                     <p className="appname">BuddyGPT</p>
                 </button>
                 
