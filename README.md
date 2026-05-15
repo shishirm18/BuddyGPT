@@ -4,6 +4,8 @@ BuddyGPT is a GPT clone using Open AI.
 OverView:
 ![alt text](image.png)
 
+Check out the BuddyGPT : https://buddy-gpt.vercel.app/
+
 ## TechStack
 - Frontend - React + CSS
 - Backend - Node.js + Express.js
